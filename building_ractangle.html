@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvars" width="1368px" height="768px" style="border:1px"></canvas>
+</body>
+<script>
+        // function create infor for ractangle---------------
+    function Rectnagle(a,b){
+        this.a=a;
+        this.b=b;
+        //function calulator (perimater) for ratangle------------
+    this.Getperimeter = function(){
+        return ( 2*(this.a+this.b))
+      }
+    //    / // function calculator arae for ractangle------------
+    this.GetArea = function(){
+        return (this.a*this.b)
+      }
+      //function change width ractangle---------------
+      this.setWidth = function(a){
+         this.a = a;
+      }
+      //function change eight ractangle------------------
+      this.setHeight = function(b){
+          this.b=b;
+      }
+    }
+       var rect1 = new Rectnagle(10,5);
+         alert(rect1.GetArea()+" with Rectnagle(10,5)");
+         alert(rect1.Getperimeter()+" withRectnagle(10,5)");
+         rect1.setWidth(11);
+         rect1.setHeight(12);
+         alert(rect1.GetArea()+"after change ");
+         alert(rect1.Getperimeter()+"after change")
+    function getRandomHex(){
+        return  Math.floor(Math.random()*225)
+    }
+    //function take color ( get ramdomcolor)
+    function getRandomColor(){
+         var red = getRandomHex();
+         var blue =getRandomHex();
+         var green = getRandomHex();
+         return "rgb("+red+","+blue+","+green+")"
+    }
+    //function draw ractangle----------------
+        
+    function drawRactangle(){
+        var draw = document.getElementById("myCanvars").getContext("2d");
+        var a = Math.random()*window.innerWidth;
+        var b = Math.random()*window.innerHeight;
+        
+        draw.beginPath();
+        var color=getRandomColor();
+        draw.rect(a,b,a,b);
+        draw.fillStyle=color;
+        draw.fill()
+    }    
+        
+        //function draw more and more ractawngle-------------------
+    function drawMuipleRactangle(){
+         for ( var i =0 ; i< 10 ;i++){
+            drawRactangle()
+         }
+    }  
+    drawMuipleRactangle()  
+
+
+</script>
+</html>

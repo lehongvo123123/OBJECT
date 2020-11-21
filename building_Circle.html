@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvars" width="1368px" height ="768px" style="border:1px;"></canvas>
+</body>
+<script>
+     function Circle(x,y,radius){
+         this.x=x;
+         this.y=y;
+         this.radius=radius;
+     }
+     //function get random color
+     function getRandomHex(){
+        var changeColor=Math.floor(Math.random()*225);
+        return (changeColor)
+     }
+     //function take random color to get random color
+     function getRandomColor(){
+         var red = getRandomHex();
+         var blue = getRandomHex();
+         var green = getRandomHex();
+       return "rgb("+red+","+blue+","+green+")"
+     }
+     //function draw circle
+     function creatingCircle(){
+         var draw=document.getElementById("myCanvars").getContext("2d");
+         var radius=Math.floor(Math.random()*80);
+         var x=Math.random()*window.innerWidth;
+         var y=Math.random()*window.innerHeight;
+         var circle  = new Circle(x,y,radius)
+         var color =getRandomColor()
+         draw.beginPath();
+         draw.arc(circle.x,circle.y,circle.radius,0,2*Math.PI)
+         draw.fillStyle=color;
+         draw.fill();
+     }
+     //createMuipleCircle in canvar--------------------------
+     function createCircleMore(){
+         for ( var i =0 ; i< 10; i++){
+            creatingCircle();
+         }sss
+     }
+     createCircleMore()
+</script>
+</html>
