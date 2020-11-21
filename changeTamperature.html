@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          // function get in for degree------------------------------
+        function currentTempareture(degree){
+               this.degree=degree
+        this.getFdegree = function(){
+            return (9*this.degree/5+32)       
+             }   
+        this.getKenvinDegree = function(){
+            return (this.degree+273.15)       
+             }  
+        this.setCdegree = function(degree){
+               this.degree=degree;
+        }
+        }
+        var newCurrentDegree = +prompt("Please! fill in current degree");
+        var current1 = new currentTempareture(newCurrentDegree);
+        alert(current1.getFdegree()+" F degree");
+        alert(current1.getKenvinDegree()+" Kenvin degreen");
+        
+        // current1.setCdegree(newCurrentDegree);
+        // alert(current1.getFdegree());
+        // alert(current1.getKenvinDegree());
+          // function change F ( degree)-----------------------------
+
+          // function change F ( degree)-----------------------------
+          // function chnage kenvin(degree)--------------------------
+
+
+    </script>
+</body>
+</html>
